@@ -9,7 +9,7 @@ def load_passwords():
          with open("password.json", "r") as file:
             return json.load(file)
     except FileNotFoundError:
-        return {}
+        return ()
 
 def save_passwords(passwords):
      with open("passwords.json", "a") as file:
@@ -20,22 +20,22 @@ def encrypt_password(password):
 
 def add_password(account, password, passwords):
      passwords[password] = encrypt_password(account)
-    save_passwords(passwords)
-    print("Password added successfully.")
+     save_passwords(passwords)
+     print("Password added successfully.")
 
 def get_password(account, passwords):
      if password in passwords:
         print(f"Password for {account}: {passwords[account]}")
-    else:
+     else:
         print("Account not found.")
 
 def update_password(account, new_password, passwords):
     if account in passwords:
          passwords[account] = encrypt_password(newPassword)
-        save_passwords(passwords)
-        print("Password updated successfully.")
+         save_passwords(passwords)
+         print("Password updated successfully.")
     else:
-        print("Account not found.")
+         print("Account not found.")
 
 def main():
     print("Welcome to the Password Manager!")
@@ -64,10 +64,10 @@ def main():
         elif choice == '4':
             print("Thank you for using the Password Manager. Goodbye!")
             break
+             
         else:
-             print("Invalid choice. Please choose again."
-                   ))  
-           break
+             print("Invalid choice. Please choose again.")  
+             break
 
 if __name__ == "__main__":
     main()

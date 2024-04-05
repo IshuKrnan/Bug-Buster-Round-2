@@ -35,8 +35,8 @@ def main():
         choice = input("Enter your choice (1-4): ")
 
         if choice == '1':
-             amnt = float(input("Enter deposit amount: $"))
-            account.deposit(amnt)
+             amount = float(input("Enter deposit amount: $"))
+            account.deposit(amount)
         elif choice == '2':
              amount = input("Enter withdrawal amount: $")
             account.withdraw(amount)
